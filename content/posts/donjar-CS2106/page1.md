@@ -107,10 +107,52 @@ signal(mutex);
 ## Dining Philosophers
 Tanenbaum, Limited Eater
 
+## Memory Management
+![fixedmem](img/cs2106/fixedmem.png "Fixed Memory")
+![dynamicmem](img/cs2106/dynamicmem.png "Dynamic Memory")
+![buddy](img/cs2106/buddy.png "Buddy Memory")
+![pagetables](img/cs2106/pagetables.png "Page Tables")
+![tlb](img/cs2106/tlb.png "TLB")
+
+### Accessing Page X
+- Check page table: if page X valid, access
+- Else: page fault, trap to OS
+- Locate page X in secondary storage
+- Load page X into a physical memory frame
+- Update page table
+- Retry
+
+### Page Replacement Algorithms
+- First In First Out
+- Least Recently Used
+- CLOCK: if accessed, give "second chance"
+
+### Frame Allocation
+Working Set Model: how many frames is used in the last N accesses?
+
+## Files
+- Sequential: read in order, cannot skip
+- Random access: `read` or `seek`
+- Direct access: file for fixed-length records; allow random access
+
+![fileunix](img/cs2106/fileunix.png "File Operations in Unix")
+
+### Directories
+- Single-level (root + files)
+- Trees
+- DAG (with links)
+- General graph with cycles
+
+### Links
+- Hard link (file only, separate pointers)
+- Symbolic link (link to path name)
+
 ## C Libraries
 0: false, rest: true
 
-Libraries
+Default FDs: 0 for STDIN, 1 for STDOUT, 2 for STDERR
+
+Functions
 - `int fork()`: parent is child, child: 0
 - `int setpid()`: my PID
 - `int getppid()`: my parent's PID
@@ -124,3 +166,8 @@ Libraries
 - Unix pipes: `int pipe(int fd[])`. `fd[0]` is reading end and `fd[1]` is writing end
 - Signalling: `void signal(int sig_num, void* handler)` e.g. `signal(SIGINT, handler)`
 - `int pthread_exit(void* exitValue)`, the `exitValue` is the return value
+- `int open(char* path, int flags)`, return the file descriptor
+- `int read(int fd, void* buf, int n)` reads n bytes from current offset at fd into buf
+- `int write(int fd, void* buf, int n)`
+- `off_t lseek(int fd, off_t offset, int whence)` moves current position in file by `offset`
+- `int close(int fd)` return 0 if success, -1 if error
