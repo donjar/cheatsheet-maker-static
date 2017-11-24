@@ -3,10 +3,10 @@ title: donjar-CS2106
 description: Introduction to Operating Systems
 ---
 
-![stack](img/cs2106/stack.png "Stack")
-![phases](img/cs2106/phases.png "Phases")
-![processtable](img/cs2106/table.png "Process Table")
-![processlifecycle](img/cs2106/lifecycle.png "Process Life Cycle")
+![stack](/img/cs2106/stack.png "Stack")
+![phases](/img/cs2106/phases.png "Phases")
+![processtable](/img/cs2106/table.png "Process Table")
+![processlifecycle](/img/cs2106/lifecycle.png "Process Life Cycle")
 
 ## Processing
 - Batch (no user)
@@ -108,11 +108,11 @@ signal(mutex);
 Tanenbaum, Limited Eater
 
 ## Memory Management
-![fixedmem](img/cs2106/fixedmem.png "Fixed Memory")
-![dynamicmem](img/cs2106/dynamicmem.png "Dynamic Memory")
-![buddy](img/cs2106/buddy.png "Buddy Memory")
-![pagetables](img/cs2106/pagetables.png "Page Tables")
-![tlb](img/cs2106/tlb.png "TLB")
+![fixedmem](/img/cs2106/fixedmem.png "Fixed Memory")
+![dynamicmem](/img/cs2106/dynamicmem.png "Dynamic Memory")
+![buddy](/img/cs2106/buddy.png "Buddy Memory")
+![pagetables](/img/cs2106/pagetables.png "Page Tables")
+![tlb](/img/cs2106/tlb.png "TLB")
 
 ### Accessing Page X
 - Check page table: if page X valid, access
@@ -135,7 +135,7 @@ Working Set Model: how many frames is used in the last N accesses?
 - Random access: `read` or `seek`
 - Direct access: file for fixed-length records; allow random access
 
-![fileunix](img/cs2106/fileunix.png "File Operations in Unix")
+![fileunix](/img/cs2106/fileunix.png "File Operations in Unix")
 
 ### Directories
 - Single-level (root + files)
