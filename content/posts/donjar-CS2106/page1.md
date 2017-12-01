@@ -1,5 +1,5 @@
 ---
-title: donjar-CS2106
+title: CS2106 by donjar (Page 1)
 description: Introduction to Operating Systems
 ---
 
@@ -108,10 +108,20 @@ signal(mutex);
 Tanenbaum, Limited Eater
 
 ## Memory Management
+
+### Fixed Allocation
 ![fixedmem](/img/cs2106/fixedmem.png "Fixed Memory")
+
+### Dynamic Allocation
 ![dynamicmem](/img/cs2106/dynamicmem.png "Dynamic Memory")
+
+### Buddy Allocation
 ![buddy](/img/cs2106/buddy.png "Buddy Memory")
+
+### Page Tables
 ![pagetables](/img/cs2106/pagetables.png "Page Tables")
+
+### TLB
 ![tlb](/img/cs2106/tlb.png "TLB")
 
 ### Accessing Page X
@@ -146,28 +156,3 @@ Working Set Model: how many frames is used in the last N accesses?
 ### Links
 - Hard link (file only, separate pointers)
 - Symbolic link (link to path name)
-
-## C Libraries
-0: false, rest: true
-
-Default FDs: 0 for STDIN, 1 for STDOUT, 2 for STDERR
-
-Functions
-- `int fork()`: parent is child, child: 0
-- `int setpid()`: my PID
-- `int getppid()`: my parent's PID
-- `int execl(const char *path, const char *arg0, ..., const char *argN, NULL)` e.g. `execl("/bin/ls", "ls", "-la", NULL)`
-- `void exit(int status)`: no return, end execution
-- `int wait(int *status)`: return PID, `*status` is exit status. Waits for child, blocks
-- `pthread_create(pthread_t* tidCreated, const pthread_attr_t* threadAttributes, void* (*starRoutine), void* argForStartRoutine)`
-- Message Passing
-  - `send(process2, message)` and `receive(process1, message)`
-  - `send(mailbox, message)` and `receive(mailbox, message)`
-- Unix pipes: `int pipe(int fd[])`. `fd[0]` is reading end and `fd[1]` is writing end
-- Signalling: `void signal(int sig_num, void* handler)` e.g. `signal(SIGINT, handler)`
-- `int pthread_exit(void* exitValue)`, the `exitValue` is the return value
-- `int open(char* path, int flags)`, return the file descriptor
-- `int read(int fd, void* buf, int n)` reads n bytes from current offset at fd into buf
-- `int write(int fd, void* buf, int n)`
-- `off_t lseek(int fd, off_t offset, int whence)` moves current position in file by `offset`
-- `int close(int fd)` return 0 if success, -1 if error
